@@ -4,10 +4,10 @@ import dlib
 import numpy as np
 import os
 
-# Carrega os modelos
-predictor_model = r"C:\Projetos\Projeto_Reconhecimento_Facial\Dlib\shape_predictor_68_face_landmarks.dat"
-face_rec_model = r"C:\Projetos\Projeto_Reconhecimento_Facial\Dlib\dlib_face_recognition_resnet_model_v1.dat"
 
+# Carrega os modelos
+predictor_model = "shape_predictor_68_face_landmarks.dat"
+face_rec_model = "dlib_face_recognition_resnet_model_v1.dat"
 if not os.path.exists(predictor_model) or not os.path.exists(face_rec_model):
     print("Os modelos necessários não foram encontrados. Certifique-se de que os arquivos .dat estão no mesmo diretório do script.")
     exit()
