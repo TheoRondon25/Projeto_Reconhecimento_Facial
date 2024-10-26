@@ -8,13 +8,14 @@ import os
 # Carrega os modelos
 predictor_model = "shape_predictor_68_face_landmarks.dat"
 face_rec_model = "dlib_face_recognition_resnet_model_v1.dat"
+
 if not os.path.exists(predictor_model) or not os.path.exists(face_rec_model):
     print("Os modelos necessários não foram encontrados. Certifique-se de que os arquivos .dat estão no mesmo diretório do script.")
     exit()
 
-face_detector = dlib.get_frontal_face_detector()
-shape_predictor = dlib.shape_predictor(predictor_model)
-face_recognizer = dlib.face_recognition_model_v1(face_rec_model)
+face_detector = dlib.get_frontal_face_detector() # type: ignore
+shape_predictor = dlib.shape_predictor(predictor_model) # type: ignore
+face_recognizer = dlib.face_recognition_model_v1(face_rec_model) # type: ignore
 
 # Carrega as imagens dos usuários cadastrados
 imagens_cadastradas = []
